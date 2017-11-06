@@ -12,7 +12,7 @@ class Active
         $this->currentRouteName  =  $currentRouteName;
     }
 
-    public function route($routePattern)
+    public function route($routePattern, $class)
     {
         // Convert to Array
 
@@ -27,7 +27,7 @@ class Active
         {
             if (str_is($i, $this->currentRouteName))
             {
-                return config('activeroute.class');
+                return $class;
             }
         }
     }
